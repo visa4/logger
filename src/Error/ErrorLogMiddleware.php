@@ -11,10 +11,10 @@ class ErrorLogMiddleware implements LoggerAwareInterface, ErrorMiddlewareInterfa
 {
     use LoggerAwareTrait;
 
-    public function __invoke($error, Request $request, Response $response, callable $out = null)
+    public function __invoke($error, Request $request, Response $response, callable $next = null)
     {
         if ($error instanceof \Throwable) {
-            $this->logger->error($error->getMessage() . '. File: ' . $error->getFile() . ':' . $error->getLine());
+            $this->logger->err($error->getMessage() . '. File: ' . $error->getFile() . ':' . $error->getLine() . ' Json trace: ' . json_encode($error->getTrace()));
         }
 
         if ($next !== null) {
