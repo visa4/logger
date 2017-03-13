@@ -1,6 +1,7 @@
 <?php
 namespace MiddlewareLogger;
 
+use Interop\Container\ContainerInterface;
 use Zend\Log\LoggerInterface;
 use Zend\ServiceManager\AbstractPluginManager;
 use Zend\ServiceManager\Factory\FactoryInterface;
@@ -8,7 +9,7 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 /**
  * Class LoggerPluginManagerFactory
  */
-class LoggerPluginManagerFactory extends FactoryInterface
+class LoggerPluginManagerFactory implements FactoryInterface
 {
     const NAMESPACE_CONFIG = 'pluginmanager-logger-factory-config';
 
