@@ -6,8 +6,9 @@ return [
             \MiddlewareLogger\Error\ErrorLogMiddleware::class => \MiddlewareLogger\Error\ErrorLogMiddlewareFactory::class,
             'LogProcessorManager' => \MiddlewareLogger\Processor\ProcessorPluginManagerFactory::class,
             'LogWriterManager' => \MiddlewareLogger\Writer\WriterPluginManagerFactory::class,
-            'LogFilterManager' => \MiddlewareLogger\Formatter\FilterPluginManagerFactory::class,
-            'LogFormatterManager' => MiddlewareLogger\Filter\FilterPluginManagerFactory::class
+            'LogFilterManager' => \MiddlewareLogger\Filter\FilterPluginManagerFactory::class,
+            'LogFormatterManager' => \MiddlewareLogger\Formatter\FormatterPluginManagerFactory::class
+
         ],
     ],
     'pluginmanager-logger-factory-config' => [
