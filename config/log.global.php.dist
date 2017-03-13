@@ -1,0 +1,18 @@
+<?php
+return [
+    'dependencies' => [
+        'factories' => [
+            \MiddlewareLogger\LoggerPluginManager::class => \MiddlewareLogger\LoggerPluginManagerFactory::class,
+            \MiddlewareLogger\Error\ErrorLogMiddleware::class => \MiddlewareLogger\Error\ErrorLogMiddlewareFactory::class,
+            'LogProcessorManager' => \MiddlewareLogger\Processor\ProcessorPluginManagerFactory::class,
+            'LogWriterManager' => \MiddlewareLogger\Writer\WriterPluginManagerFactory::class,
+            'LogFilterManager' => \MiddlewareLogger\Formatter\FilterPluginManagerFactory::class,
+            'LogFormatterManager' => MiddlewareLogger\Filter\FilterPluginManagerFactory::class
+        ],
+    ],
+    'pluginmanager-logger-factory-config' => [
+        'abstract_factories' => [
+            \Zend\Log\LoggerAbstractServiceFactory::class
+        ]
+    ],
+];
